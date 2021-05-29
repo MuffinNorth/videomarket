@@ -6,13 +6,13 @@ $ROUTER = array(
         'inNavBar' => '1'
     ],
     "login" => [
-        'view' => "index",
+        'view' => "login",
         'title' => "Страница входа",
-        'inNavBar' => '1'
+        'inNavBar' => '2'
     ],
     "logup" => [
-        'view' => "index",
+        'view' => "logup",
         'title' => "Страница регистрации",
-        'inNavBar' => '1'
+        'inNavBar' => '3'
     ],
 );

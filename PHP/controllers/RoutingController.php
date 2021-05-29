@@ -13,3 +13,17 @@ foreach ($ROUTER as $key => $value) {
         break;
     }
 }
+if($URI[0] == 'register'){
+    include_once "./PHP/register.php";
+}
+if($URI[0] == 'log-in'){
+    include_once "./PHP/login.php";
+}
+if($URI[0] == 'logout'){
+    $_SESSION["logindata"] = array(
+        "isLogin" => false,
+        "username" => "guest",
+        "session_key" => "000000"
+    );
+    header('Location: /');
+}

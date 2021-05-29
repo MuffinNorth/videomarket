@@ -1,9 +1,10 @@
 <?php
 require_once "./config/dbconfig.php";
 try {
-    $dbh = new PDO("pgsql:host=$host;port=5432;dbname=$dbname;user=$user;password=$password");
- }
- catch(PDOException $e)
- {
+      $mysqli = new mysqli($host, $username, $password, $dbname);
+      $mysqli->set_charset("utf8");
+}
+catch(PDOException $e)
+{
        echo $e->getMessage();
- }
+}

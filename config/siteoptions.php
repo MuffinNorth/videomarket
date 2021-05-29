@@ -1,7 +1,12 @@
 <?php
 $SITE_NAME = "ВИДЕОМАРКЕТ";
-$NAVOPTIONS = array(
-    "Список фильмов" => "/",
+$guestNAVOPTIONS = array(
+    "Главная" => "/",
     "Авторизация" => "/login",
     "Регистрация" => "/logup"
+);
+$userNAVOPTIONS = array(
+    "Главная" => "/",
+    "Мой список" => "/login",
+    "Выход" => "/logout"
 );

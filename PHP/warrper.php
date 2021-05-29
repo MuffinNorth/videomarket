@@ -5,6 +5,8 @@ function genHead($title){
     <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
     <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css\" integrity=\"sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l\" crossorigin=\"anonymous\">
+    <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.0.8/css/all.css\">
+    <script src=\"https://code.jquery.com/jquery-3.6.0.js\" integrity=\"sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=\" crossorigin=\"anonymou\"></script>
     <title>$title</title>
     </head>";  
 }
@@ -17,15 +19,21 @@ function genHTMLFirst(){
 
 function genHTMLEnd(){
     echo '   
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script> 
     </body>
     </html>';
 }
 
 function getNavItems($nowpage){
-    global $NAVOPTIONS;
+    global $guestNAVOPTIONS;
+    global $userNAVOPTIONS;
     $i = 1;
+    if($_SESSION['logindata']['isLogin']){
+      $NAVOPTIONS = $userNAVOPTIONS;
+    }else{
+      $NAVOPTIONS = $guestNAVOPTIONS;
+    }
+
     $keys = array_keys($NAVOPTIONS);
     echo '<ul class="navbar-nav mr-auto mb-2 mb-lg-0">';
     foreach($keys as $key){
