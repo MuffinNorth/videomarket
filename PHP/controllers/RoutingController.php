@@ -27,3 +27,15 @@ if($URI[0] == 'logout'){
     );
     header('Location: /');
 }
+if($URI[0] == 'studios'){
+    $data = [
+        "title" => 'Фильмы студии',
+        "nowpage" => '0'
+    ];
+    getView('studios', $data);
+}
+if($URI[0] == 'api'){
+    if($URI[1] == 'addMovie'){
+        include_once "./PHP/addRent.php";
+    }
+}

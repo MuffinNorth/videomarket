@@ -8,11 +8,22 @@ $ROUTER = array(
     "login" => [
         'view' => "login",
         'title' => "Страница входа",
-        'inNavBar' => '2'
+        'inNavBar' => '3'
     ],
     "logup" => [
         'view' => "logup",
         'title' => "Страница регистрации",
-        'inNavBar' => '3'
+        'inNavBar' => '4'
     ],
+    "list" => [
+        'view' => "movieList",
+        'title' => "Список фильмов",
+        'inNavBar' => '2'
+    ],
+    "mylist" => [
+        'view' => "mylist",
+        'title' => 'Мой список фильмов',
+        'inNavBar' => '2'
+    ]
+    
 );
