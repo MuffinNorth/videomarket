@@ -24,18 +24,20 @@ function generateRow($film_data){
     echo "<td>$price</td>";
     if($_SESSION['logindata']['isLogin']){
       echo "<td class=\"d-flex justify-content-center\">
-    <button class=\"btn btn-info\" onclick=\"addMovie('$username', $id)\">Получить копию</button>
+    <a class=\"btn btn-warning\" href=\"/adminAddMovie?id=$id\">Редактировать фильм</a>
     </td>";
-    }else{
-      echo "<td class=\"d-flex justify-content-center\">
-    <button class=\"btn btn-warning\" disabled>Получить копию</button>
+    echo "<td class=\"d-flex justify-content-center\">
+    <button class=\"btn btn-danger\" onClick=\"adminDelMovie($id)\" >Удалить</button>
     </td>";
     }
     echo "</tr>";
 }
 
 ?>
-<table class="table table-striped table-hover table-bordered">
+<table class="table table-striped table-hover table-bordered">  
+    <div class="row m-1">
+    <a class="btn btn-primary" href="/adminAddMovie">Добавить фильм</a> 
+    </div>
   <thead>
     <tr>
     <th><a href="?order=id">#</a></th>

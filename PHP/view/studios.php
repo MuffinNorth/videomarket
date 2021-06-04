@@ -15,7 +15,7 @@ function generateRow($film_data){
     echo "<th scope=\"row\">";
     echo $id;
     echo "</th>";
-    echo "<td>$title</td>";
+    echo "<td><a href=\"/movies/$id\">$title</a></td>";
     echo "<td>$genre</td>";
     echo "<td>$syn</td>";
     echo "<td><a href=\"/studios/$sid\">$studio</a></td>";
@@ -38,14 +38,14 @@ function generateRow($film_data){
 <table class="table table-striped table-hover table-bordered">
   <thead>
     <tr>
-      <th>#</th>
-      <th>Название</th>
-      <th>Жанр</th>
+      <th><a href="?order=id">#</a></th>
+      <th><a href="?order=title">Название</a></th>
+      <th><a href="?order=genre">Жанр</a></th>
       <th>Краткое описание</th>
-      <th>Студия</th>
-      <th>Режиссёр</th>
-      <th>Год выпуска</th>
-      <th>Цена (руб/день)</th>
+      <th><a href="?order=Name">Студия</a></th>
+      <th><a href="?order=Director">Режиссёр</a></th>
+      <th><a href="?order=Year_production">Год выпуска</a></th>
+      <th><a href="?order=Price">Цена</a></th>
       <th>Действия</th>
     </tr>
     
@@ -55,7 +55,12 @@ function generateRow($film_data){
   global $mysqli;
   global $URI;
   $ids = $URI[1];
-  $sql = "SELECT film.`ID`, studio.`ID` as `SID`,`Title`,`Name`,`Director`,`Year_production`,`Price`,`synopsis`,`Genre` FROM `film`, `studio` WHERE `studio`.`ID` = $ids and film.ID_studio = studio.ID";
+  if(isset($_GET['order'])){
+    $by = $_GET['order'];
+    $sql = "SELECT film.`ID`, studio.`ID` as `SID`,`Title`,`Name`,`Director`,`Year_production`,`Price`,`synopsis`,`Genre` FROM `film`, `studio` WHERE `studio`.`ID` = $ids and film.ID_studio = studio.ID order by $by";
+  }else{
+    $sql = "SELECT film.`ID`, studio.`ID` as `SID`,`Title`,`Name`,`Director`,`Year_production`,`Price`,`synopsis`,`Genre` FROM `film`, `studio` WHERE `studio`.`ID` = $ids and film.ID_studio = studio.ID"; 
+  }
   $res = $mysqli->query($sql);
   $count = $res->num_rows;
   for($i = 0; $i < $count; $i++){

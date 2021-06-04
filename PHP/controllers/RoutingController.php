@@ -23,6 +23,7 @@ if($URI[0] == 'logout'){
     $_SESSION["logindata"] = array(
         "isLogin" => false,
         "username" => "guest",
+        "role" => 0,
         "session_key" => "000000"
     );
     header('Location: /');
@@ -37,5 +38,11 @@ if($URI[0] == 'studios'){
 if($URI[0] == 'api'){
     if($URI[1] == 'addMovie'){
         include_once "./PHP/addRent.php";
+    }else if($URI[1] == 'returnMovie'){
+        include_once "./PHP/returnRent.php";
+    }else if($URI[1] == 'getUser'){
+        include_once "./PHP/getUserData.php";
+    }else if($URI[1] == 'updateUserData'){
+        include_once "./PHP/updateUserData.php";
     }
 }

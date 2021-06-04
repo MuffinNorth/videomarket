@@ -14,4 +14,4 @@ if(isset($_POST['who']) and isset($_POST['what'])){
     echo $sql;
     $mysqli->query($sql);
 }
-echo 'd';
+echo 'false';

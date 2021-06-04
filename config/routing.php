@@ -23,7 +23,27 @@ $ROUTER = array(
     "mylist" => [
         'view' => "mylist",
         'title' => 'Мой список фильмов',
+        'inNavBar' => '3'
+    ],
+    "me" =>[
+        'view' => "myProfile",
+        'title' => 'Мой аккаунт',
+        'inNavBar' => '4'
+    ],
+    "aMovieList" => [
+        'view' => "aMovieList",
+        'title' => 'Админская панель - фильмы',
         'inNavBar' => '2'
+    ],
+    "aStudioList" => [
+        'view' => "aStudioList",
+        'title' => 'Админская панель - студии',
+        'inNavBar' => '3'
+    ],
+    "adminAddMovie" => [
+        'view' => "adminAddMovie",
+        'title' => "Создать или редактировать фильм",
+        'inNavBar' => '0'
     ]
     
 );

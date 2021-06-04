@@ -66,7 +66,6 @@
 
 <script>
     const onSend = ()=>{
-        alert("send")
         const data = {
         registerData: {
             login: $("#login").val(),

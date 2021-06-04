@@ -13,3 +13,13 @@ $userNAVOPTIONS = array(
     "Мой аккаунт" => "/me",
     "Выход" => "/logout"
 );
+$adminNAVOPTIONS = array(
+    "Главная" => "/",
+    "Список фильмов" => "/aMovieList",
+    "Список студий" => "/aStudioList",
+    "Список актеров" => "/aActorList",
+    "Список аренд" => "/aRentList",
+    "Список пользователей" => "/aUserlist",
+    "Мой аккаунт" => "/me",
+    "Выход" => "/logout"
+);
