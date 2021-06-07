@@ -44,5 +44,21 @@ if($URI[0] == 'api'){
         include_once "./PHP/getUserData.php";
     }else if($URI[1] == 'updateUserData'){
         include_once "./PHP/updateUserData.php";
+    }else if($URI[1] == 'updateOrAddFilm'){
+        include_once "./PHP/updateOrAddFilm.php";
+    }else if($URI[1] == 'updateOrAddStudio'){
+        include_once "./PHP/updateOrAddStudio.php";
+    }else if($URI[1] == 'updateOrAddActor'){
+        include_once "./PHP/updateOrAddActor.php";
+    }else if($URI[1] == "delMovie"){
+        include_once "./PHP/delMovie.php";
+    }else if($URI[1] == "delStudio"){
+        include_once "./PHP/delStudio.php";
+    }else if($URI[1] == "delActor"){
+        include_once "./PHP/delActor.php";
+    }else if($URI[1] == "updateOrAddCast"){
+        include_once "./PHP/updateOrAddCast.php";
+    }else if($URI[1] == "delCast"){
+        include_once "./PHP/delCast.php";
     }
 }

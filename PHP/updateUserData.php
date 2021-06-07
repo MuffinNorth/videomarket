@@ -7,11 +7,12 @@ $phone = $_GET['phone'];
 $address = $_GET['addres'];
 $password = $_GET['password'];
 $sql = "";
-if(isset($password)){
+if($password != ""){
     $password = password_hash($password, PASSWORD_BCRYPT);
     $sql = "UPDATE `client` SET `Full_name` = '$name', `Passport` = '$passport', `Phone_number` = '$phone', `Adress` = '$address', `Password` = '$password' WHERE `client`.`login` = '$username'";
 }else{
     $sql = "UPDATE `client` SET `Full_name` = '$name', `Passport` = '$passport', `Phone_number` = '$phone', `Adress` = '$address' WHERE `client`.`login` = '$username'";
 }
+echo $sql;
 $res = $mysqli->query($sql);
 echo "true";

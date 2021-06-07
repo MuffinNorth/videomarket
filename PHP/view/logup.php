@@ -78,6 +78,46 @@
             password: $("#password").val()
         }
     }
+    if($("#login").val().length < 1){
+        $("#login").addClass("is-invalid");
+    }else{
+        $("#login").removeClass("is-invalid");
+    }
+    if($("#name").val().length < 1){
+        $("#name").addClass("is-invalid");
+    }else{
+        $("#name").removeClass("is-invalid");
+    }
+    if($("#lname").val().length < 1){
+        $("#lname").addClass("is-invalid");
+    }else{
+        $("#lname").removeClass("is-invalid");
+    }
+    if($("#email").val().length < 1){
+        $("#email").addClass("is-invalid");
+    }else{
+        $("#email").removeClass("is-invalid");
+    }
+    if($("#number").val().length < 9 ){
+        $("#number").addClass("is-invalid");
+    }else{
+        $("#number").removeClass("is-invalid");
+    }
+    if($("#passport").val().length < 1){
+        $("#passport").addClass("is-invalid");
+    }else{
+        $("#passport").removeClass("is-invalid");
+    }
+    if($("#addres").val().length < 1){
+        $("#addres").addClass("is-invalid");
+    }else{
+        $("#addres").removeClass("is-invalid");
+    }
+    if($("#password").val().length < 1){
+        $("#password").addClass("is-invalid");
+    }else{
+        $("#password").removeClass("is-invalid");
+    }
     $.post('/register', data, (e)=>{
         console.log(e);
     })

@@ -28,7 +28,7 @@ function generateRow($film_data){
     echo "<td>$outprice</td>";
     if($_SESSION['logindata']['isLogin']){
       echo "<td class=\"d-flex justify-content-center\">
-    <button class=\"btn btn-primary\" onclick=\"returnMovie($rid)\">Вернуть и оплатить</button>
+    <a class=\"btn btn-primary\" href=\"/paymentPage/$rid/$outprice\">Вернуть и оплатить</a>
     </td>";
     }else{
       echo "<td class=\"d-flex justify-content-center\">

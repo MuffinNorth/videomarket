@@ -35,6 +35,10 @@ function generateRow($film_data){
 }
 
 ?>
+<div class="row mx-2 d-flex justify-content-start">
+<button class="btn btn-info m-2">Скачать список фильмов сгрупированных по жанрам</button>
+<button class="btn btn-info m-2">Скачать фильмы определенного режиссера</button>
+</div>
 <table class="table table-striped table-hover table-bordered">
   <thead>
     <tr>
